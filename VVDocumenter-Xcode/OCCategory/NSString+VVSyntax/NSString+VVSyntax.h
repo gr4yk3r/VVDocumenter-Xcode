@@ -42,5 +42,6 @@
 -(BOOL) vv_isSwiftEnum;
 -(BOOL) vv_isSwiftProperty;
 -(BOOL) vv_isSwiftExtension;
+-(BOOL) vv_isHeader;
 
 @end

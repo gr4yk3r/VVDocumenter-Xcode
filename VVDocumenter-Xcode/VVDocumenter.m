@@ -80,6 +80,9 @@
         commenter = [[VVSwiftEnumCommenter alloc] initWithIndentString:baseIndent codeString:trimCode];
     } else if ([trimCode vv_isProperty]) {
         commenter = [[VVPropertyCommenter alloc] initWithIndentString:baseIndent codeString:trimCode];
+    } else if([trimCode vv_isHeader])
+    {
+        commenter = [[VVHeaderCommenter alloc] initWithIndentString:baseIndent codeString:trimCode];
     } else if ([trimCode vv_isCFunction]) {
         commenter = [[VVFunctionCommenter alloc] initWithIndentString:baseIndent codeString:trimCode];
     } else if ([trimCode vv_isMacro]) {

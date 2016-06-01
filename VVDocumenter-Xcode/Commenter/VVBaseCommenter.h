@@ -27,7 +27,6 @@
 #import <Foundation/Foundation.h>
 
 @interface VVBaseCommenter : NSObject
-
 @property (nonatomic, copy) NSString *indent;
 @property (nonatomic, copy) NSString *code;
 @property (nonatomic, strong) NSMutableArray *arguments;
@@ -35,7 +34,6 @@
 @property (nonatomic, assign) BOOL hasThrows;
 
 -(instancetype) initWithIndentString:(NSString *)indent codeString:(NSString *)code;
-
 -(NSString *) document;
 
 -(NSString *) documentForC;
@@ -53,5 +51,7 @@
 -(NSString *) endComment;
 -(NSString *) returnComment;
 -(NSString *) sinceComment;
+-(NSString *) prefixString;
+-(NSString *) emptyLine;
 
 @end

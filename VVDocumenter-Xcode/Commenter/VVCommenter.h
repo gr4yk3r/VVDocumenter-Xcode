@@ -40,5 +40,6 @@
 #import "VVSwiftEnumCommenter.h"
 #import "VVSwiftPropertyCommenter.h"
 #import "VVSwiftExtensionCommenter.h"
+#import "VVHeaderCommenter.h"
 
 #endif

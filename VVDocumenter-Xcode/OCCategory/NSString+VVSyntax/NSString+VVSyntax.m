@@ -54,12 +54,18 @@
            ![self vv_isSwiftFunction] &&
            ![self vv_isSwiftEnum] &&
            ![self vv_isSwiftProperty] &&
+           ![self vv_isHeader] &&
            [self vv_matchesPatternRegexPattern:@".+\\s+.+\\("];
 }
 
 -(BOOL) vv_isProperty
 {
 	return [self vv_matchesPatternRegexPattern:@"^\\s*\\@property"];
+}
+
+-(BOOL) vv_isHeader
+{
+    return [self vv_matchesPatternRegexPattern:@"^\\s*\\#?[import|include]"];
 }
 
 -(BOOL) vv_isMacro
