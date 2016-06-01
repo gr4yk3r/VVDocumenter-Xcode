@@ -29,14 +29,20 @@
     NSString *authorInfo = @"";
     NSString *dateInfo = @"";
     
-    if ([[VVDocumenterSetting defaultSetting] useAuthorInformation]) {
+    BOOL useAuthor = [[VVDocumenterSetting defaultSetting] useAuthorInformation];
+    useAuthor = YES;
+    
+    if (useAuthor) {
         NSMutableString *authorCotent = @"".mutableCopy;
         
         if ([[VVDocumenterSetting defaultSetting] authorInformation].length > 0) {
             [authorCotent appendString:[[VVDocumenterSetting defaultSetting] authorInformation]];
         }
         
-        if ([[VVDocumenterSetting defaultSetting] useDateInformation]) {
+        BOOL useDate = [[VVDocumenterSetting defaultSetting] useDateInformation];
+        useDate = YES;
+        
+        if (useDate) {
             NSString *formatString = [[VVDocumenterSetting defaultSetting] dateInformationFormat];
             if ([formatString length] <= 0) {
                 formatString = @"MM-dd-YYYY HH:MM:ss";
@@ -53,7 +59,7 @@
             [authorCotent appendString: dateInfo];
         }
         
-        authorInfo = [NSString stringWithFormat:@"%@@author %@\n%@", self.prefixString, authorCotent, self.prefixString];
+        authorInfo = [NSString stringWithFormat:@"%@@author %@\n", self.prefixString, authorCotent];
         
     }
     
