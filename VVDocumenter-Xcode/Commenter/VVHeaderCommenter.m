@@ -21,7 +21,7 @@
 
 -(NSString *) startComment
 {
-    NSString *header = [NSString stringWithFormat:@"@header <#header#>\n%@%@@brief ",self.emptyLine,self.prefixString];
+    NSString *header = [NSString stringWithFormat:@"@header <#header#>\n%@%@@brief  ",self.emptyLine,self.prefixString];
     return [self startCommentWithDescriptionTag:header];
 }
 
